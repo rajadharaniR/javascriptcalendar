@@ -1,0 +1,46 @@
+<html>
+    <head>
+            <link href="style.css" rel="stylesheet" type="text/css">
+        <script type="text/javascript" src="calendar.js"></script>
+    </head>
+    <body>
+            
+            <input type="text" name="calendar" id="calendar" onclick='calendarInit()'/>
+            <script type="text/javascript">
+                var $calendar = document.getElementById("calendar");
+                var currentYear = new Date().getFullYear();
+                var calendarize = new Calendarize();
+                function calendarInit()
+                {
+                    calendarize.buildYearCalendar($calendar, currentYear);
+                }
+                
+                function showPrevMon(month,year)
+                {
+                    document.getElementById("calendar").innerHTML="";
+                    calendarize.buildDaysAndWeeks($calendar, year,month);
+                }
+                function showNextMon(month,year)
+                {
+                    document.getElementById("calendar").innerHTML="";
+                    calendarize.buildDaysAndWeeks($calendar,year,month);
+                }
+                function openMonths(year)
+                {
+                    document.getElementById("calendar").innerHTML="";
+                    calendarize.buildMonthsForYear($calendar, year);
+                }
+                function openCalendarDays(year,month)
+                {
+                    document.getElementById("calendar").innerHTML="";
+                    calendarize.buildDaysAndWeeks($calendar, year,month);
+                }
+                
+                function setDateOnElement(e)
+                {
+                    alert(e);
+                    calendarize.setDateOnInput($calendar, this);
+                }
+            </script>        
+    </body>
+</html>
