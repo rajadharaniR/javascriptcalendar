@@ -3,86 +3,52 @@ body {
 	background: #e5e5e5;
 	font-family: sans-serif
 }
+.previousYears
+{
+	left:10px;
+}
+.nextYears
+{
+	right:25px;
+}
+.previousYears,.nextYears
+{
+	margin-right:5%;
+	margin-left:5%;
+	cursor: pointer;
+	position: absolute;
+}
 #calendarHolder
 {
-    width: 300px;
+    width: 236px;
 	padding: 20px;
 	background: #fff;
 	position: absolute;
 	overflow: hidden;
 	float: left;
-    height: 350px;
-    z-index: 3000;
+    height: 200px;
+	z-index: 3000;
+	box-shadow: 0px 5px 3px 0px #888888;
+	border-radius: 5px;
 }
 .pointer
 {
     cursor: pointer;
 }
-.year,.yearAndmonth
+.year
 {
     width:25%;
     display: inline-block;
     vertical-align: top;
-    padding-top:4%;    padding-bottom:4%;
+    padding-top:6%;    padding-bottom:4%;
     cursor: pointer;
-}
-.month,.yearHolder,.monthHolder {
-	/*width: 300px;
-	padding: 20px;
-	background: #fff;
-	position: relative;
-	overflow: hidden;
-	float: left;
-	margin: 20px;
-	height: 350px*/
 }
 
 #calendarHolder h3 {
 	text-align: center;
-	margin: -20px -20px 30px;
-	padding: 20px 0;
-	background: red;
-	color: #fff
+    margin: -20px -20px 0px;
+    padding: 20px 0;
+    background: #fff;
+    color: #4a4949;
 }
 
-.day,
-.dow,
-.dummy-day {
-	display: inline-block;
-	width: 12.7864%;
-	float: left;
-	text-align: center;
-	margin-right: 1.5%
-}
-
-.dow {
-	font-weight: 700;
-	margin-bottom: 10px
-}
-
-.day {
-	color: #333;
-	cursor: pointer;
-	box-shadow: inset 0 0 0 1px #eee
-}
-
-.day.weekend {
-	background: #fafaff
-}
-
-.day:hover {
-	background: #ff0
-}
-
-.day,
-.dummy-day {
-	height: 40px;
-	line-height: 40px;
-	margin-bottom: 1.5%;
-	background: #fff
-}
-
-.dummy-day {
-	background: #f5f5f5;
-	color: #ccc
-}

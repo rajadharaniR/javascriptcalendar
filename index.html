@@ -8,39 +8,14 @@
             <input type="text" name="calendar" id="calendar" onclick='calendarInit()'/>
             <script type="text/javascript">
                 var $calendar = document.getElementById("calendar");
-                var currentYear = new Date().getFullYear();
                 var calendarize = new Calendarize();
                 function calendarInit()
                 {
+                    var currentYear = ($calendar.value=="")?(new Date().getFullYear()):parseInt($calendar.value);
                     calendarize.buildYearCalendar($calendar, currentYear);
-                }
+                    document.getElementById("calendarHolder").style.display="";
+                } 
                 
-                function showPrevMon(month,year)
-                {
-                    document.getElementById("calendar").innerHTML="";
-                    calendarize.buildDaysAndWeeks($calendar, year,month);
-                }
-                function showNextMon(month,year)
-                {
-                    document.getElementById("calendar").innerHTML="";
-                    calendarize.buildDaysAndWeeks($calendar,year,month);
-                }
-                function openMonths(year)
-                {
-                    document.getElementById("calendar").innerHTML="";
-                    calendarize.buildMonthsForYear($calendar, year);
-                }
-                function openCalendarDays(year,month)
-                {
-                    document.getElementById("calendar").innerHTML="";
-                    calendarize.buildDaysAndWeeks($calendar, year,month);
-                }
-                
-                function setDateOnElement(e)
-                {
-                    alert(e);
-                    calendarize.setDateOnInput($calendar, this);
-                }
             </script>        
     </body>
 </html>
